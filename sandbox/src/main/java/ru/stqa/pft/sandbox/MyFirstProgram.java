@@ -1,5 +1,8 @@
 package ru.stqa.pft.sandbox;
 
+// Текущее состояние - завершение 1-го урока
+// Пока sandbox - это по-прежнему 1 модуль (а не несколько разных модулей)
+
 public class MyFirstProgram {
 
   public static void main(String[] args) {
