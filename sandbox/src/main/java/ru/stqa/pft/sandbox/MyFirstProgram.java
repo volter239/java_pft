@@ -1,6 +1,5 @@
 package ru.stqa.pft.sandbox;
 
-// Текущее состояние - завершение 1-го урока
 // Пока sandbox - это по-прежнему 1 модуль (а не несколько разных модулей)
 
 public class MyFirstProgram {
@@ -16,9 +15,9 @@ public class MyFirstProgram {
     Rectangle r = new Rectangle(4, 6);
     System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " = " + r.area());
 
-    Point p1 = new Point(1,0);
-    Point p2 = new Point(1,0);
-    System.out.println("Расстояние между точками (" + p1.x + "," + p1.y + ") и (" + p2.x + "," + p2.y + ") = " + distance(p1, p2));
+    Point p1 = new Point(0.5 ,0.7);
+    Point p2 = new Point(1.5, 1.7);
+    System.out.println("Использование статической функции: расстояние между точками  (" + p1.x + "," + p1.y + ") и (" + p2.x + "," + p2.y + ") = " + distance(p1, p2));
   }
 
   public static void hello(String somebody) {
