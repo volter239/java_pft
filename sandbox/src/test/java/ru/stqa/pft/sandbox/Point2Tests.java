@@ -9,6 +9,8 @@ public class Point2Tests {
     public void testArea() {
         Point2 p = new Point2(0.5, 0.7, 1.5, 1.7);
         Assert.assertTrue((p.distance()-1.4142<0.001));
-    }
 
+        p = new Point2(-1, 0, 1, 2);
+        Assert.assertTrue((p.distance()-2.828<0.001));
+    }
 }

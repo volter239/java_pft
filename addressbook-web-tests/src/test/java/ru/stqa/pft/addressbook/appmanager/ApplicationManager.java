@@ -11,6 +11,7 @@ public class ApplicationManager {
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
+    private ContactHelper contactHelper;
 
     public void init() {
         // java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.gecko.driver system property ...
@@ -23,6 +24,8 @@ public class ApplicationManager {
 
         groupHelper = new GroupHelper(wd);
 
+        contactHelper = new ContactHelper(wd);
+
         navigationHelper = new NavigationHelper(wd);
 
         sessionHelper = new SessionHelper(wd);
@@ -33,11 +36,15 @@ public class ApplicationManager {
         wd.quit();
     }
 
+    public NavigationHelper getNavigationHelper() {
+        return navigationHelper;
+    }
+
     public GroupHelper getGroupHelper() {
         return groupHelper;
     }
 
-    public NavigationHelper getNavigationHelper() {
-        return navigationHelper;
+    public ContactHelper getContactHelper() {
+        return contactHelper;
     }
 }
