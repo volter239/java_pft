@@ -1,7 +1,6 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -48,12 +47,13 @@ public class ContactHelper extends HelperBase {
         acceptAlert();
     }
 
-    public void selectContact() {
-        click(By.name("selected[]"));
+    public void selectContact(int index) {
+        wd.findElements(By.name("selected[]")).get(index).click();
     }
 
-    public void initContactModification() {
-        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+    public void initContactModification(int index) {
+        // click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+        wd.findElements(By.cssSelector("img[alt='Edit']")).get(index).click();
     }
 
     public void submitContactModification() {
@@ -72,6 +72,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public int getContactCount() {
-        return wd.findElements(By.name("selected[]")).size();
+        // return wd.findElements(By.name("selected[]")).size();
+        return wd.findElements(By.cssSelector("img[alt='Edit']")).size();
     }
 }
