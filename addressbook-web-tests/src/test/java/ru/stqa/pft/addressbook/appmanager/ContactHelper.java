@@ -45,6 +45,8 @@ public class ContactHelper extends HelperBase {
         type(By.name("home"), contactData.getHomePhone());
         type(By.name("email"), contactData.getEmail1());
 
+        attach(By.name("photo"), contactData.getPhoto());
+
         if (creation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         }
