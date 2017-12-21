@@ -17,6 +17,7 @@ public class ContactData {
     private String email3;
     private String allEmails;
     private String group;
+    private String allDetails;
 
     public ContactData withId(int id) {
         this.id = id;
@@ -98,6 +99,11 @@ public class ContactData {
         return this;
     }
 
+    public ContactData withAllDetails(String allDetails) {
+        this.allDetails = allDetails;
+        return this;
+    }
+
     public int getId() {
         return id;
     }
@@ -130,12 +136,39 @@ public class ContactData {
         return homePhone;
     }
 
+    public String getHomePhoneWihHint() {
+        if (homePhone.length()>0) {
+            return "H:"+homePhone;
+        }
+        else {
+            return homePhone;
+        }
+    }
+
     public String getMobilePhone() {
         return mobilePhone;
     }
 
+    public String getMobilePhoneWihHint() {
+        if (mobilePhone.length()>0) {
+            return "M:"+mobilePhone;
+        }
+        else {
+            return mobilePhone;
+        }
+    }
+
     public String getWorkPhone() {
         return workPhone;
+    }
+
+    public String getWorkPhoneWihHint() {
+        if (workPhone.length()>0) {
+            return "W:"+workPhone;
+        }
+        else {
+            return workPhone;
+        }
     }
 
     public String getAllPhones() {
@@ -160,6 +193,10 @@ public class ContactData {
 
     public String getGroup() {
         return group;
+    }
+
+    public String getAllDetails() {
+        return allDetails;
     }
 
     @Override
