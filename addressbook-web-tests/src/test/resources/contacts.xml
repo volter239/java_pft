@@ -8,6 +8,8 @@
     <homePhone>8-0-0-0</homePhone>
     <mobilePhone>+7 0 0 0</mobilePhone>
     <email1>email0@mail.ru</email1>
+    <group>test 0</group>
+    <photo>src\test\resources\stru.png</photo>
   </contact>
   <contact>
     <firstName>First1</firstName>
@@ -18,6 +20,8 @@
     <homePhone>8-1-1-1</homePhone>
     <mobilePhone>+7 1 1 1</mobilePhone>
     <email1>email1@mail.ru</email1>
+    <group>test 0</group>
+    <photo>src\test\resources\stru.png</photo>
   </contact>
   <contact>
     <firstName>First2</firstName>
@@ -28,6 +32,8 @@
     <homePhone>8-2-2-2</homePhone>
     <mobilePhone>+7 2 2 2</mobilePhone>
     <email1>email2@mail.ru</email1>
+    <group>test 0</group>
+    <photo>src\test\resources\stru.png</photo>
   </contact>
   <contact>
     <firstName>First3</firstName>
@@ -38,6 +44,8 @@
     <homePhone>8-3-3-3</homePhone>
     <mobilePhone>+7 3 3 3</mobilePhone>
     <email1>email3@mail.ru</email1>
+    <group>test 0</group>
+    <photo>src\test\resources\stru.png</photo>
   </contact>
   <contact>
     <firstName>First4</firstName>
@@ -48,5 +56,7 @@
     <homePhone>8-4-4-4</homePhone>
     <mobilePhone>+7 4 4 4</mobilePhone>
     <email1>email4@mail.ru</email1>
+    <group>test 0</group>
+    <photo>src\test\resources\stru.png</photo>
   </contact>
 </list>
