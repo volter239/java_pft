@@ -1,0 +1,52 @@
+<list>
+  <contact>
+    <firstName>First0</firstName>
+    <lastName>Last0</lastName>
+    <address>СПб, пр. Науки 100,
+к.200,
+кв.300</address>
+    <homePhone>8-0-0-0</homePhone>
+    <mobilePhone>+7 0 0 0</mobilePhone>
+    <email1>email0@mail.ru</email1>
+  </contact>
+  <contact>
+    <firstName>First1</firstName>
+    <lastName>Last1</lastName>
+    <address>СПб, пр. Науки 101,
+к.201,
+кв.301</address>
+    <homePhone>8-1-1-1</homePhone>
+    <mobilePhone>+7 1 1 1</mobilePhone>
+    <email1>email1@mail.ru</email1>
+  </contact>
+  <contact>
+    <firstName>First2</firstName>
+    <lastName>Last2</lastName>
+    <address>СПб, пр. Науки 102,
+к.202,
+кв.302</address>
+    <homePhone>8-2-2-2</homePhone>
+    <mobilePhone>+7 2 2 2</mobilePhone>
+    <email1>email2@mail.ru</email1>
+  </contact>
+  <contact>
+    <firstName>First3</firstName>
+    <lastName>Last3</lastName>
+    <address>СПб, пр. Науки 103,
+к.203,
+кв.303</address>
+    <homePhone>8-3-3-3</homePhone>
+    <mobilePhone>+7 3 3 3</mobilePhone>
+    <email1>email3@mail.ru</email1>
+  </contact>
+  <contact>
+    <firstName>First4</firstName>
+    <lastName>Last4</lastName>
+    <address>СПб, пр. Науки 104,
+к.204,
+кв.304</address>
+    <homePhone>8-4-4-4</homePhone>
+    <mobilePhone>+7 4 4 4</mobilePhone>
+    <email1>email4@mail.ru</email1>
+  </contact>
+</list>
