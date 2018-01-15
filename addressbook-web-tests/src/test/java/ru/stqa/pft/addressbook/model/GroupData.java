@@ -21,17 +21,17 @@ public class GroupData {
 
     @Expose
     @Column(name = "group_name")
-    private String name;
+    private String name = "";
 
     @Expose
     @Column(name = "group_header")
     @Type(type = "text")
-    private String header;
+    private String header = "";
 
     @Expose
     @Column(name = "group_footer")
     @Type(type = "text")
-    private String footer;
+    private String footer = "";
 
     public GroupData withId(int id) {
         this.id = id;
@@ -67,6 +67,20 @@ public class GroupData {
 
     public String getFooter() {
         return footer;
+    }
+
+    public void modifyNullStrings() {
+        if (name == null) {
+            name = "";
+        }
+
+        if (header == null) {
+            header = "";
+        }
+
+        if (footer == null) {
+            footer = "";
+        }
     }
 
     @Override

@@ -35,28 +35,4 @@
     <group>test 0</group>
     <photo>src\test\resources\stru.png</photo>
   </contact>
-  <contact>
-    <firstName>First3</firstName>
-    <lastName>Last3</lastName>
-    <address>СПб, пр. Науки 103,
-к.203,
-кв.303</address>
-    <homePhone>8-3-3-3</homePhone>
-    <mobilePhone>+7 3 3 3</mobilePhone>
-    <email1>email3@mail.ru</email1>
-    <group>test 0</group>
-    <photo>src\test\resources\stru.png</photo>
-  </contact>
-  <contact>
-    <firstName>First4</firstName>
-    <lastName>Last4</lastName>
-    <address>СПб, пр. Науки 104,
-к.204,
-кв.304</address>
-    <homePhone>8-4-4-4</homePhone>
-    <mobilePhone>+7 4 4 4</mobilePhone>
-    <email1>email4@mail.ru</email1>
-    <group>test 0</group>
-    <photo>src\test\resources\stru.png</photo>
-  </contact>
 </list>

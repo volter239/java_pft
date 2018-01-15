@@ -17,50 +17,60 @@ public class ContactData {
     private int id = Integer.MAX_VALUE;
 
     @Column(name = "firstname")
-    private String firstName;
+    private String firstName = "";
 
     @Column(name = "middlename")
-    private String middleName;
+    private String middleName = "";
 
     @Column(name = "lastname")
-    private String lastName;
+    private String lastName = "";
 
     @Column(name = "home")
     @Type(type = "text")
-    private String homePhone;
+    private String homePhone = "";
 
     @Column(name = "mobile")
     @Type(type = "text")
-    private String mobilePhone;
+    private String mobilePhone = "";
 
     @Column(name = "work")
     @Type(type = "text")
-    private String workPhone;
+    private String workPhone = "";
 
     @Transient
-    private String allPhones;
+    private String allPhones = "";
 
     @Transient
     private String group;
 
-    @Column(name = "photo")
-    @Type(type = "text")
+    @Transient
     private String photo;
 
-    @Transient
-    private String nickName;
-    @Transient
-    private String company;
-    @Transient
-    private String address;
-    @Transient
-    private String email1;
-    @Transient
-    private String email2;
-    @Transient
-    private String email3;
+    @Column(name = "nickname")
+    private String nickName = "";
+
+    @Column(name = "company")
+    private String company = "";
+
+    @Column(name = "address")
+    @Type(type = "text")
+    private String address = "";
+
+    @Column(name = "email")
+    @Type(type = "text")
+    private String email1 = "";
+
+    @Column(name = "email2")
+    @Type(type = "text")
+    private String email2 = "";
+
+    @Column(name = "email3")
+    @Type(type = "text")
+    private String email3 = "";
+
     @Transient
     private String allEmails;
+
     @Transient
     private String allDetails;
 
@@ -250,14 +260,70 @@ public class ContactData {
     }
 
     public File getPhoto() {
-        return new File(photo);
+        if (photo == null) {
+            return null;
+        }
+        else {
+            return new File(photo);
+        }
+    }
+
+    public void modifyNullStrings() {
+        if (firstName == null) {
+            firstName = "";
+        }
+
+        if (middleName == null) {
+            middleName = "";
+        }
+
+        if (lastName == null) {
+            lastName = "";
+        }
+
+        if (homePhone == null) {
+            homePhone = "";
+        }
+
+        if (mobilePhone == null) {
+            mobilePhone = "";
+        }
+
+        if (workPhone == null) {
+            workPhone = "";
+        }
+
+        if (nickName == null) {
+            nickName = "";
+        }
+
+        if (company == null) {
+            company = "";
+        }
+
+        if (address == null) {
+            address = "";
+        }
+
+        if (email1 == null) {
+            email1 = "";
+        }
+
+        if (email2 == null) {
+            email2 = "";
+        }
+
+        if (email3 == null) {
+            email3 = "";
+        }
     }
 
     @Override
     public String toString() {
         return "ContactData{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
@@ -271,14 +337,34 @@ public class ContactData {
 
         if (id != that.id) return false;
         if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
-        return lastName != null ? lastName.equals(that.lastName) : that.lastName == null;
+        if (middleName != null ? !middleName.equals(that.middleName) : that.middleName != null) return false;
+        if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
+        if (homePhone != null ? !homePhone.equals(that.homePhone) : that.homePhone != null) return false;
+        if (mobilePhone != null ? !mobilePhone.equals(that.mobilePhone) : that.mobilePhone != null) return false;
+        if (workPhone != null ? !workPhone.equals(that.workPhone) : that.workPhone != null) return false;
+        if (nickName != null ? !nickName.equals(that.nickName) : that.nickName != null) return false;
+        if (company != null ? !company.equals(that.company) : that.company != null) return false;
+        if (address != null ? !address.equals(that.address) : that.address != null) return false;
+        if (email1 != null ? !email1.equals(that.email1) : that.email1 != null) return false;
+        if (email2 != null ? !email2.equals(that.email2) : that.email2 != null) return false;
+        return email3 != null ? email3.equals(that.email3) : that.email3 == null;
     }
 
     @Override
     public int hashCode() {
         int result = id;
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (middleName != null ? middleName.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (homePhone != null ? homePhone.hashCode() : 0);
+        result = 31 * result + (mobilePhone != null ? mobilePhone.hashCode() : 0);
+        result = 31 * result + (workPhone != null ? workPhone.hashCode() : 0);
+        result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
+        result = 31 * result + (company != null ? company.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (email1 != null ? email1.hashCode() : 0);
+        result = 31 * result + (email2 != null ? email2.hashCode() : 0);
+        result = 31 * result + (email3 != null ? email3.hashCode() : 0);
         return result;
     }
 }
