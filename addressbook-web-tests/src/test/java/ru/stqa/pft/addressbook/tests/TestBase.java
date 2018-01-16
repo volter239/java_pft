@@ -8,9 +8,17 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
+import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.stream.Collectors;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.junit.MatcherAssert.assertThat;
 
 public class TestBase {
 
@@ -37,6 +45,36 @@ public class TestBase {
     @AfterMethod(alwaysRun = true)
     public void logTestStop(Method m) {
         logger.info("Stop test " + m.getName());
+    }
+
+    public void verifyContactListInUI() {
+        if (Boolean.getBoolean("verifyUI")) {
+            Contacts dbContacts = app.db().contacts();
+            Contacts uiContacts = app.contact().all();
+
+            assertThat(uiContacts.stream().map((g) -> new ContactData().withId(g.getId()).withFirstName(g.getFirstName()).withLastName(g.getLastName()).withAddress(cleanedStr(g.getAddress()))).collect(Collectors.toSet()),
+               equalTo(dbContacts.stream().map((g) -> new ContactData().withId(g.getId()).withFirstName(g.getFirstName()).withLastName(g.getLastName()).withAddress(cleanedStr(g.getAddress()))).collect(Collectors.toSet())));
+
+            assertThat(uiContacts.stream().map((g) -> (g.getId() + g.getAllPhones())).collect(Collectors.toSet()),
+               equalTo(dbContacts.stream().map((g) -> (g.getId() + mergePhones(g))).collect(Collectors.toSet())));
+        }
+    }
+
+    public void verifyGroupListInUI() {
+        if (Boolean.getBoolean("verifyUI")) {
+            Groups dbGroups = app.db().groups();
+            Groups uiGroups = app.group().all();
+
+            assertThat(uiGroups, equalTo(dbGroups.stream().map((g) -> new GroupData().withId(g.getId()).withName(g.getName())).collect(Collectors.toSet())));
+        }
+    }
+
+    public static String cleanedStr(String str) {
+        return str.replaceAll("\\s", "").replaceAll("[-()]", "");
+    }
+
+    private String mergePhones(ContactData contact) {
+        return Arrays.asList(contact.getHomePhone(), contact.getMobilePhone(), contact.getWorkPhone()).stream().filter((s) -> ! s.equals("")).map(ContactPhoneTests::cleaned).collect(Collectors.joining("\n"));
     }
 
 }
